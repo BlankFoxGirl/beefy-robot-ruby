@@ -84,6 +84,7 @@ class Vector2D
   end
 
   def right
+    # Rotate vector 90 degrees to the right.
     what_is_right = @direction
     if @direction == 4
       what_is_right = 1
@@ -93,6 +94,7 @@ class Vector2D
   end
 
   def left
+    # Rotate vector 90 degrees to the left.
     what_is_left = @direction
     if @direction == 1
       what_is_left = 4

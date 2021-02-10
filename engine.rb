@@ -45,6 +45,8 @@ class Engine
         robot.turn_right
       when "MOVE"
         robot.move_forwards
+      when "BACK"
+        robot.move_backwards
       when "PLACE"
         placement_vector = cmd_args[1].split(",")
         robot.place(placement_vector[0].to_i, placement_vector[1].to_i, Vector2D.direction_vector(placement_vector[2]))

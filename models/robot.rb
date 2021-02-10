@@ -26,18 +26,21 @@ class Robot
   end
 
   def turn_left
+    # Rotate -90 Degrees.
     if @placed
       self.face(@vector2d.left)
     end
   end
 
   def turn_right
+    # Rotate +90 Degrees.
     if @placed
       self.face(@vector2d.right)
     end
   end
 
   def position
+    # Return with the X,Y position of the robot.
     return {
       x: @vector2d.x,
       y: @vector2d.y
@@ -45,6 +48,7 @@ class Robot
   end
 
   def place(x, y, direction)
+    # Places this robot in a particular location.
     if direction.nil?
       raise "Invalid direction"
     end
@@ -56,12 +60,14 @@ class Robot
   end
 
   def move_forwards
+    # Move in a forwards direction if we are able to.
     if @board.can_move_direction(@vector2d.forward_forecast, self.facing) and @placed
       @vector2d.forward
     end
   end
 
   def move_backwards
+    # Move in a backwards direction if we are able to.
     if @board.can_move_direction(@vector2d.backward_forecast, self.facing) and @placed
       @vector2d.backward
     end
